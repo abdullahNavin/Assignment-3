@@ -4,14 +4,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fruit Burst</title>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- tailwind and daisy -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- costom css -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'mcolor': '#F85559',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+<!-- <style>
+    p{
+        background: #00000033;
+    }
+</style> -->
 
 <body>
+    <header class="md:container md:mx-auto">
+        <div class="navbar bg-mcolor px-3 rounded-full justify-between invisible md:visible lg:visible">
+            <div class="flex">
+                <ul class="menu menu-horizontal text-white">
+                    <li><a>Home</a></li>
+                    <li><a>About us</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>All Fruits</a></li>
+                </ul>
+            </div>
+            <div>
 
+                <div class="flex items-center gap-2">
+                    <img class="w-1/4" src="./images/logo.png" alt="">
+                    <h2 class="text-white font-bold text-xl">Fruit Burst</h2>
+                </div>
+            </div>
+            <div class="gap-2">
+                <div class="form-control">
+                    <input type="text" placeholder="Search here" class="py-2 px-4 rounded-3xl md:w-auto w-10" />
+                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                </div>
+            </div>
+        </div>
+        <!-- responsive -->
+        <div class="navbar bg-base-100 absolute top-0 visible lg:invisible md:invisible">
+            <div class="flex-1 gap-2">
+                <img class="w-1/5" src="./images/logo.png" alt="">
+                <h3 class="font-semibold text-xl">Fruit Burst</h3>
+            </div>
+            <div class="navbar justify-end flex-1">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 right-0">
+                        <li><a>Home</a></li>
+                        <li><a>About us</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>All Fruits</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="md:container md:mx-auto">
+        <section class="mt-12">
+            <div class="relative carousel w-full h-[500px]">
+                <div id="slide1" class="carousel-item relative w-full">
+                    <img src="./images/banner1.png" class="w-full" />
+                    <div class="z-10 absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide4" class="btn btn-circle">❮</a>
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide2" class="carousel-item relative w-full">
+                    <img src="./images/banner2.png" class="w-full" />
+                    <div class="z-10 absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" class="btn btn-circle">❮</a>
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" class="carousel-item relative w-full">
+                    <img src="./images/banner3.png" class="w-full" />
+                    <div class="z-10 absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" class="btn btn-circle">❮</a>
+                        <a href="#slide4" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide4" class="carousel-item relative w-full">
+                    <img src="./images/banner4.png" class="w-full" />
+                    <div class="z-10 absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" class="btn btn-circle">❮</a>
+                        <a href="#slide1" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div class="absolute top-0 left-0 w-full h-full rounded bg-[#00000033] flex justify-center">
+                    <div class="text-white text-center mt-12">
+                        <h1 class="font-extrabold text-4xl my-10">Exotic tastes at your <br> doorstep</h1>
+                        <p>We supply highly quality organic products</p>
+                        <button class="btn bg-mcolor border-none text-white mt-8">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <div
+                class="flex justify-between w-[1000px] shadow-md rounded pb-2 pt-6 px-6 mx-auto bg-white relative bottom-20 invisible md:invisible lg:visible">
+                <div class="flex flex-col items-center justify-center">
+                    <div>
+                        <img src="./images/fruit1.png" alt="">
+                    </div>
+                    <div>
+                        <p class="text-center">Strawberry</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <div>
+                        <img src="./images/fruit2.png" alt="">
+                    </div>
+                    <div>
+                        <p class="text-center">Orang</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <div>
+                        <img src="./images/fruit3.png" alt="">
+                    </div>
+                    <div>
+                        <p class="text-center">Mango</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <div>
+                        <img src="./images/fruit4.png" alt="">
+                    </div>
+                    <div>
+                        <p class="text-center">Strawberry</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <div>
+                        <img src="./images/fruit5.png" alt="">
+                    </div>
+                    <div>
+                        <p class="text-center">Mango</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="my-16">
+            <div class="flex flex-col lg:flex-row lg:justify-between">
+                <div class=" text-center lg:text-left lg:w-1/2">
+                    <h1 class="text-3xl font-bold">Deal of the day</h1>
+                    <p class="text-gray-400 mt-4">Contrary to popular belief, is not simply random text. It has roots in
+                        a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                </div>
+                <div>
+                    <div class="ml-10 lg:ml-0 grid grid-flow-col gap-5 text-center auto-cols-max mt-8 lg:mt-0 lg:w-1/2">
+                        <div class="flex flex-col">
+                            <span class="countdown font-mono text-5xl">
+                                <span style="--value:15;"></span>
+                            </span>
+                            days
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="countdown font-mono text-5xl">
+                                <span style="--value:10;"></span>
+                            </span>
+                            hours
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="countdown font-mono text-5xl">
+                                <span style="--value:24;"></span>
+                            </span>
+                            min
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="countdown font-mono text-5xl">
+                                <span style="--value:2;"></span>
+                            </span>
+                            sec
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12">
+                <div class="card w-96 bg-base-100 border">
+                    <div class="p-4">
+                        <figure class="px-10 pt-10">
+                            <img src="./images/fruit6.png" alt="Shoes" class="rounded-xl w-1/2" />
+                        </figure>
+                        <h1 class="text-center font-semibold text-xl mt-3">12.90$ - 18.85$</h1>
+                    </div>
+                    <hr>
+                    <div class="card-body items-center text-center">
+                        <p>Apples</p>
+                        <div class="rating">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        </div>
+                        <div class="card-actions text-red-600">
+                            <button class="btn" onclick="my_modal_5.showModal()">Details</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- test modal -->
+                <!-- Open the modal using ID.showModal() method -->
+                <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <form method="dialog" class="modal-box">
+                        <h3 class="font-bold text-lg">Hello!</h3>
+                        <p class="py-4">Press ESC key or click the button below to close</p>
+                        <div class="modal-action">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </div>
+                    </form>
+                </dialog>
+            </div>
+        </section>
+    </main>
+    <footer class="md:container md:mx-auto">
+
+    </footer>
 </body>
 
 </html>
